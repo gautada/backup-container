@@ -7,6 +7,9 @@ RUN echo "America/New_York" > /etc/timezone
 
 FROM alpine:3.12.1
 
+COPY --from=config-alpine /etc/localtime /etc/localtime
+COPY --from=config-alpine /etc/timezone  /etc/timezone
+
 CMD ["tail", "-f", "/dev/null"]
 
 
