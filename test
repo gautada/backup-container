@@ -1,0 +1,8 @@
+#!/bin/sh
+echo "+----------------------+"
+echo "|                      |"
+echo "| Test: backup         |"
+echo "|                      |"
+echo "+----------------------+"
+echo "$1"
+docker exec -i $1 pgrep -f crond
