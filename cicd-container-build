@@ -10,10 +10,9 @@ echo "|                      |"
 echo "+----------------------+"
 
 export IMAGE_NAME="$1"
-export IMAGE_TAG="jenkins-build"
-export PARAMETERS="$2"
+export IMAGE_TAG="cicd-build"
 
-docker build --tag $IMAGE_NAME:$IMAGE_TAG . &&
-./cicd-container-run $IMAGE_NAME $IMAGE_TAG $PARAMETERS
+docker build --tag $IMAGE_NAME:$IMAGE_TAG . --no-cache
+return $?
 
 
